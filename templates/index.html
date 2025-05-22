@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plagiarism Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Plagiarism Checker</h1>
+            <p>Check your content for originality with our advanced plagiarism detection tool</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="checker-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="text-compare">Compare Texts</button>
+                <button class="tab-btn" data-tab="web-check">Check Against Web</button>
+            </div>
+
+            <div class="tab-content active" id="text-compare">
+                <div class="input-group">
+                    <div class="text-area-container">
+                        <h3>Your Text</h3>
+                        <textarea id="text1" placeholder="Paste your content here..."></textarea>
+                    </div>
+                    <div class="text-area-container">
+                        <h3>Text to Compare</h3>
+                        <textarea id="text2" placeholder="Paste content to compare or leave empty for web search..."></textarea>
+                        
+                    </div>
+                </div>
+                <button id="check-btn" class="primary-btn">Check for Plagiarism</button>
+            </div>
+
+            <div class="tab-content" id="web-check">
+                <div class="input-group single">
+                    <div class="text-area-container">
+                        <h3>Your Text</h3>
+                        <textarea id="web-text" placeholder="Paste your content here to check against web sources..."></textarea>
+                    </div>
+                </div>
+                <button id="web-check-btn" class="primary-btn">Check Against Web</button>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Why Choose Our Plagiarism Checker?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Results</h3>
+                    <p>Get plagiarism analysis in seconds with our optimized algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure</h3>
+                    <p>Your documents are never stored or shared with third parties.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Deep Search</h3>
+                    <p>Comprehensive web search to detect copied content.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Detailed Report</h3>
+                    <p>Receive a complete similarity report with highlighted matches.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Analyzing content...</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
